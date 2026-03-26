@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#020617;color:white;text-align:center;">
+
+<h2>Scan Result</h2>
+
+<p>IP: {{ ip }}</p>
+<p>Requests: {{ count }}</p>
+<p>Status: {{ decision }}</p>
+
+<p>Country: {{ info.country }}</p>
+<p>City: {{ info.city }}</p>
+
+<p>Prediction: {{ prediction }}</p>
+
+<script>
+setTimeout(function(){
+    window.location.href = "/dashboard";
+}, 3000);
+</script>
+
+</body>
+</html>

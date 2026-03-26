@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Email</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Enter Your Email</h2>
+
+<form action="/scan" method="post">
+    <input type="email" name="email" required>
+    <br><br>
+    <button class="start-btn" type="submit">Start Scan</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+    background:#020617;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+}
+
+table{
+    margin:auto;
+    margin-top:20px;
+    border-collapse:collapse;
+    width:90%;
+}
+
+th,td{
+    border:1px solid white;
+    padding:10px;
+}
+
+th{
+    background:#1e293b;
+}
+
+canvas{
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>📊 Dashboard</h2>
+
+<table>
+<tr>
+<th>IP</th>
+<th>Count</th>
+<th>Status</th>
+<th>Country</th>
+<th>City</th>
+<th>Prediction</th>
+</tr>
+
+{% for item in history %}
+<tr>
+<td>{{ item.ip }}</td>
+<td>{{ item.count }}</td>
+<td>{{ item.decision }}</td>
+<td>{{ item.country }}</td>
+<td>{{ item.city }}</td>
+<td>{{ item.prediction }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<canvas id="chart"></canvas>
+
+<script>
+var safe = {{ safe }};
+var alert = {{ alert }};
+var block = {{ block }};
+
+new Chart(document.getElementById("chart"), {
+    type: 'bar',
+    data: {
+        labels: ["SAFE","ALERT","BLOCK"],
+        datasets: [{
+            label: "Traffic",
+            data: [safe, alert, block]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
