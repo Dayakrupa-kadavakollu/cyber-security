@@ -1,0 +1,50 @@
+body{
+    margin:0;
+    background:#020617;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+}
+
+.header img{
+    width:100%;
+    height:90px;
+}
+
+.logo img{
+    width:120px;
+    margin-top:20px;
+}
+
+/* 🔥 FIXED SCROLL TEXT */
+.scroll-text{
+    margin-top:20px;
+    font-size:22px;
+    overflow:hidden;
+    white-space:nowrap;
+    color:yellow;
+}
+
+.scroll-text span{
+    display:inline-block;
+    padding-left:100%;
+    animation:scroll 10s linear infinite;
+}
+
+@keyframes scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-100%);}
+}
+
+.team{
+    margin-top:30px;
+}
+
+.start-btn{
+    margin-top:40px;
+    padding:12px 30px;
+    background:#22c55e;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
